@@ -1,4 +1,4 @@
-package com.example.project26
+package com.crz.crazytimerush
 
 import io.flutter.embedding.android.FlutterActivity
 
