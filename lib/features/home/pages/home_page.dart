@@ -16,28 +16,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  void checkReward() async {
-    final prefs = await SharedPreferences.getInstance();
-    int lastReward = prefs.getInt('lastReward') ?? 0;
-
-    if ((lastReward + 86400) < getCurrentTimestamp()) {
-      if (mounted) {
-        showDialog(
-          context: context,
-          builder: (context) {
-            return const RewardDialog();
-          },
-        );
-      }
-    } else {
-      logger(getCurrentTimestamp() - lastReward);
-    }
-  }
-
   @override
   void initState() {
     super.initState();
-    checkReward();
   }
 
   @override
